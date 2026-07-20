@@ -20,70 +20,36 @@
   </defs>
 
   <style>
-    /* CSS Styles & Animations for Dynamic Aspect */
+    /* Safe CSS Animations - only animating opacity for wide compatibility */
     @keyframes pulse {
-      0% { opacity: 0.3; }
+      0% { opacity: 0.2; }
       50% { opacity: 0.9; }
-      100% { opacity: 0.3; }
+      100% { opacity: 0.2; }
     }
 
-    @keyframes rotate-slow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @keyframes pulse-alternate {
+      0% { opacity: 0.9; }
+      50% { opacity: 0.2; }
+      100% { opacity: 0.9; }
     }
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0px); }
-    }
-
-    @keyframes dash {
-      to {
-        stroke-dashoffset: -40;
-      }
-    }
-
-    .bg-grid {
-      fill: none;
-      stroke: #1e295d;
-      stroke-width: 1;
-      opacity: 0.25;
-    }
-
-    .node {
+    .node-pulse-1 {
       animation: pulse 3s infinite ease-in-out;
     }
 
-    .node-delayed {
-      animation: pulse 3s infinite ease-in-out;
-      animation-delay: 1.5s;
-    }
-
-    .spinning-gear {
-      transform-origin: 1050px 200px;
-      animation: rotate-slow 30s infinite linear;
-    }
-
-    .floating-card {
-      animation: float 5s infinite ease-in-out;
-    }
-
-    .pulse-line {
-      stroke: url(#primary-grad);
-      stroke-dasharray: 8, 20;
-      animation: dash 2s infinite linear;
+    .node-pulse-2 {
+      animation: pulse-alternate 3s infinite ease-in-out;
     }
 
     .text-title {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
       font-weight: 800;
       font-size: 46px;
       fill: #ffffff;
     }
 
     .text-subtitle {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
       font-weight: 600;
       font-size: 18px;
       fill: #00f2fe;
@@ -91,7 +57,7 @@
     }
 
     .text-desc {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
       font-weight: 400;
       font-size: 16px;
       fill: #a0aec0;
@@ -102,55 +68,51 @@
   <rect x="0" y="0" width="1200" height="400" fill="url(#bg-grad)" />
 
   <!-- Grid Pattern -->
-  <g class="bg-grid">
+  <g fill="none" stroke="#1e295d" stroke-width="1" opacity="0.25">
     <path d="M 0,50 L 1200,50 M 0,100 L 1200,100 M 0,150 L 1200,150 M 0,200 L 1200,200 M 0,250 L 1200,250 M 0,300 L 1200,300 M 0,350 L 1200,350" />
     <path d="M 100,0 L 100,400 M 200,0 L 200,400 M 300,0 L 300,400 M 400,0 L 400,400 M 500,0 L 500,400 M 600,0 L 600,400 M 700,0 L 700,400 M 800,0 L 800,400 M 900,0 L 900,400 M 1000,0 L 1000,400 M 1100,0 L 1100,400" />
   </g>
 
-  <!-- Dynamic/Animated Tech Elements (Right Side Graphic) -->
-  <!-- Spinning tech ring -->
-  <g class="spinning-gear" opacity="0.5">
-    <circle cx="1050" cy="200" r="120" fill="none" stroke="url(#primary-grad)" stroke-width="2" stroke-dasharray="20 10 5 10" />
-    <circle cx="1050" cy="200" r="95" fill="none" stroke="#9b51e0" stroke-width="1.5" stroke-dasharray="40 40" />
-    <circle cx="1050" cy="200" r="70" fill="none" stroke="#00f2fe" stroke-width="1" stroke-dasharray="4 8" />
+  <!-- Tech Graphic Elements (Right Side) -->
+  <g opacity="0.5">
+    <circle cx="1050" cy="200" r="120" fill="none" stroke="url(#primary-grad)" stroke-width="2" stroke-dasharray="20,10,5,10" />
+    <circle cx="1050" cy="200" r="95" fill="none" stroke="#9b51e0" stroke-width="1.5" stroke-dasharray="40,40" />
+    <circle cx="1050" cy="200" r="70" fill="none" stroke="#00f2fe" stroke-width="1" stroke-dasharray="4,8" />
   </g>
 
-  <!-- Data Flow Lines (Dynamic pulse effect) -->
+  <!-- Data Flow Lines -->
   <path d="M 750,200 L 930,200" fill="none" stroke="#1e295d" stroke-width="2" />
-  <path d="M 750,200 L 930,200" class="pulse-line" stroke-width="3" />
+  <path d="M 750,200 L 930,200" fill="none" stroke="url(#primary-grad)" stroke-width="3" stroke-dasharray="8,20" class="node-pulse-1" />
   
   <path d="M 850,120 L 970,170" fill="none" stroke="#1e295d" stroke-width="2" />
-  <path d="M 850,120 L 970,170" class="pulse-line" stroke-width="3" style="animation-delay: 0.7s;" />
+  <path d="M 850,120 L 970,170" fill="none" stroke="url(#primary-grad)" stroke-width="3" stroke-dasharray="8,20" class="node-pulse-2" />
   
   <path d="M 850,280 L 970,230" fill="none" stroke="#1e295d" stroke-width="2" />
-  <path d="M 850,280 L 970,230" class="pulse-line" stroke-width="3" style="animation-delay: 1.3s;" />
+  <path d="M 850,280 L 970,230" fill="none" stroke="url(#primary-grad)" stroke-width="3" stroke-dasharray="8,20" class="node-pulse-1" />
 
-  <!-- Interactive/Dynamic Floating Nodes -->
-  <g class="floating-card">
+  <!-- Nodes (Pulse Animation on Opacity) -->
+  <g>
     <!-- Main Hub Node -->
     <circle cx="1050" cy="200" r="40" fill="#141e46" stroke="url(#primary-grad)" stroke-width="3" />
     <path d="M 1038,190 L 1062,190 M 1038,200 L 1062,200 M 1038,210 L 1062,210" fill="none" stroke="#00f2fe" stroke-width="3" stroke-linecap="round" />
     
-    <!-- Satellite Node 1: Wearable / Sensor -->
-    <g class="node">
+    <!-- Satellite Node 1 -->
+    <g class="node-pulse-1">
       <circle cx="850" cy="120" r="30" fill="#141e46" stroke="#00f2fe" stroke-width="2" />
-      <!-- Heart/Pulse Icon -->
       <path d="M 842,120 L 846,120 L 849,112 L 852,128 L 855,117 L 857,120 L 860,120" fill="none" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </g>
 
-    <!-- Satellite Node 2: Database / EDC -->
-    <g class="node-delayed">
+    <!-- Satellite Node 2 -->
+    <g class="node-pulse-2">
       <circle cx="750" cy="200" r="30" fill="#141e46" stroke="#9b51e0" stroke-width="2" />
-      <!-- Database cylinder -->
       <path d="M 740,192 C 740,188 760,188 760,192 L 760,208 C 760,212 740,212 740,208 Z" fill="none" stroke="#9b51e0" stroke-width="1.5" />
       <path d="M 740,197 C 740,201 760,201 760,197" fill="none" stroke="#9b51e0" stroke-width="1.5" />
       <path d="M 740,202 C 740,206 760,206 760,202" fill="none" stroke="#9b51e0" stroke-width="1.5" />
     </g>
 
-    <!-- Satellite Node 3: Telehealth / eConsent -->
-    <g class="node">
+    <!-- Satellite Node 3 -->
+    <g class="node-pulse-1">
       <circle cx="850" cy="280" r="30" fill="#141e46" stroke="url(#secondary-grad)" stroke-width="2" />
-      <!-- Video camera icon -->
       <rect x="840" y="272" width="14" height="10" rx="1" fill="none" stroke="url(#secondary-grad)" stroke-width="1.5" />
       <path d="M 854,275 L 861,271 L 861,279 Z" fill="none" stroke="url(#secondary-grad)" stroke-width="1.5" />
     </g>
@@ -172,5 +134,4 @@
     <text x="0" y="320" class="text-desc">A comprehensive, community-curated guide with 190+ questions</text>
     <text x="0" y="345" class="text-desc">covering eClinical architecture, DCT design, CSV, &amp; data integrity.</text>
   </g>
-
 </svg>

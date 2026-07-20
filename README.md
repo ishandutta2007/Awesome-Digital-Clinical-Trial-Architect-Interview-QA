@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Awesome Digital Clinical Trial Architect Interview Q&A Banner" width="100%">
+  <img src="./assets/banner.svg" alt="Awesome Digital Clinical Trial Architect Interview Q&A Banner" width="100%">
 </p>
+
 
 # 🧬 Awesome Digital Clinical Trial Architect Interview Q&A 💻
 
