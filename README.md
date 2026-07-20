@@ -4,9 +4,21 @@
 
 # 🧬 Awesome Digital Clinical Trial Architect Interview Q&A 💻
 
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a><a href="https://github.com/ishandutta2007/Awesome-Digital-Clinical-Trial-Architect-Interview-QA/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Digital-Clinical-Trial-Architect-Interview-QA?style=flat-square" alt="License"/></a><a href="https://github.com/ishandutta2007/Awesome-Digital-Clinical-Trial-Architect-Interview-QA/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"/></a>
+</p>
+
+<!-- 
+SEO Metadata:
+Keywords: Digital Clinical Trial Architect, Decentralized Clinical Trials, eClinical Systems, EDC, CTMS, eTMF, RTSM, eCOA, ePRO, CDISC, HL7 FHIR, SDTM, 21 CFR Part 11, Wearables, Remote Patient Monitoring, RBQM, ICH E6(R3), HIPAA, GDPR, CSV, CSA, GCP
+Description: The ultimate Digital Clinical Trial Architect interview preparation guide containing 190+ expert Q&As on eClinical stacks, DCTs, validation, compliance, and standards.
+-->
+
 A comprehensive, community-curated collection of **190+ interview questions and answers** for **Digital Clinical Trial Architect** roles — professionals who design decentralized/hybrid clinical trials, eClinical systems, and digital data-capture infrastructure that meets GCP and regulatory standards. 🏥📈
 
+
 ---
+
 
 ## 📌 Overview 🔍
 
